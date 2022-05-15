@@ -23,14 +23,6 @@ class OrderController extends Controller
     public function create(Request $request) {
         $user = $request->input('user');
         $course = $request->input('course');
-        // $isExist = Order::where('course_id', '=', $course)
-        //     ->where('user_id', '=', $user)->exists(); 
-        // if ($isExist) {
-        //     return response()->json([
-        //         'status' => 'error',
-        //         'message' => 'User already take this course'
-        //     ], 409);
-        // }
         $order = Order::create([
             'user_id' => $user['id'],
             'course_id' => $course['id']
